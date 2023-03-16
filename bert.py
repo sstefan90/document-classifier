@@ -27,11 +27,6 @@ def fine_tune_bert(model, log_path, writer, batch_size=16, lr=2e-5, max_length=1
     model = copy.deepcopy(model)
     optimizer = torch.optim.Adam(model.parameters(), lr=lr, eps=1e-8)
 
-    if mode.startswith('lora'):
-        for m in model.transformer.h:
-            m.mlp.c_fc = LoRAConv1DWrapper(m.mlp.c_fc, int(mode[4:]))
-            m.mlp.c_proj = LoRAConv1DWrapper(m.mlp.c_proj, int(mode[4:]))
-
     model.to(DEVICE)
 
     training_generator = process_data(TRAIN_FILE_NAME, batch_size, max_length)
