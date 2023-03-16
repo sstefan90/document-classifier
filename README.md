@@ -13,4 +13,4 @@ final evaluation of the trained model, loaded from a checkpoint
 
 ## Model Training
 
-This model was trained using an AWS EC2 instance equipt with a Tesla T4 GPU. On local, training takes approximately 2 hours. On the GPU, training takes minutes
+This model was trained using an AWS EC2 instance equip with a Tesla T4 GPU. On local, training takes approximately 2 hours. On the GPU, training takes minutes
