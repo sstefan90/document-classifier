@@ -3,7 +3,7 @@
 
 ## Docker and Model Deployment
 The trained Model was hosted on AWS with an exposed API that anyone could query. A Flask app was created to run model inference on a text provided in the body of a 'get' request. To host the model, a Docker Image was created to (1) containerize the flask app, and (2) containerize the reverse proxy (Ngnix).
-All relevant files for model deployment (with the exception of the trained model itself, as the filesize is too big for github) are available under the *flask_app* directory. 
+All relevant files for model deployment (with the exception of the trained model itself, as the filesize is too big for github) are available under the *flask_app* directory. The wsgi server for this project was Gunicorn.
 
 The docker image was moved to a remote host machine on AWS. Docker was installed on the host machine, and the port 1337 was also configured to be exposed, to make sure clients can reach the Nginx reverse proxy.
 
