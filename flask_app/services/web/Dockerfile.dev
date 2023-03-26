@@ -1,0 +1,16 @@
+FROM python:3.10.7-slim-buster
+
+WORKDIR /usr/src/app
+
+RUN apt-get update && apt-get install -y netcat
+
+RUN pip install --upgrade pip
+
+ENV PYTHONDONTWRITEBYTECODE 1
+ENV PYTHONUNBUFFERED 1
+
+
+
+COPY ./requirements.txt .
+RUN pip install -r /usr/src/app/requirements.txt
+COPY . /user/src/app

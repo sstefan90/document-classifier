@@ -1,0 +1,10 @@
+import requests
+
+BASE =  "http://127.0.0.1:5000/"
+text = {"label": 2,
+        "text": "nakasone sounds conciliatory note in chip dispute prime minister yasuhiro nakasone sounded a conciliatory note in japan s increasingly bitter row with the united states over trade in computer microchips japan wants to resolve the issue through consultations by explaining its stance thoroughly and correcting the points that need to be corrected he was quoted by kyodo news service as saying while expressing regret over america s decision to impose tariffs on imports of japanese electrical goods nakasone said tokyo was willing to send a high level official to washington to help settle the dispute government officials said japan would make a formal request next week for emergency talks and that the two sides would probably meet the week after just days before the april deadline set by washington for the tariffs to take effect tokyo is expected to propose a joint u s japan investigation of american claims that japanese companies are dumping cut price chips in asian markets on friday washington announced plans to put as much as mln dlrs in tariffs on imports of certain japanese electronic goods in retaliation for what it sees as tokyo s failure to live up to their bilateral chip pact reuter"}
+
+text1 = {"label": 1,
+            "text":"grandview acquires control of u k ticket group consolidated grandview inc said it acquired a pct stake in all ticket group plc of london for undisclosed terms the seller was also undisclosed all ticket is a special events travel company with exclusive european rights to ual inc ual s united airlines apollo system booking all united airlines flights in britain and europe all ticket and its subsidiaries will also co sponsor various events this year including the british open golf tournament and rowing s henley regatta its revenues totaled mln canadian dlrs reuter"}
+response  = requests.get(f'{BASE}{text["text"]}')
+print(response.json())
